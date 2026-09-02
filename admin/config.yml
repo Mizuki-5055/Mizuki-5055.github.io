@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: Mizuki-5055/helelism
+  branch: main
+  base_url: https://sveltia-cms-auth.hibitaeru.workers.dev
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: gallery
+    label: Gallery
+    folder: _data/gallery
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Image, name: image, widget: image }
