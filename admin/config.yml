@@ -8,12 +8,19 @@ media_folder: images/uploads
 public_folder: /images/uploads
 
 collections:
-  - name: gallery
-    label: Gallery
-    folder: _data/gallery
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: text, required: false }
-      - { label: Image, name: image, widget: image }
+  - name: pages
+    label: Pages
+    files:
+      - file: _data/gallery.yml
+        label: Gallery
+        name: gallery
+        fields:
+          - { label: Page Heading, name: heading, widget: string, required: false }
+          - { label: Intro Text, name: intro, widget: text, required: false }
+          - name: items
+            label: Gallery Items
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Image, name: image, widget: image }
