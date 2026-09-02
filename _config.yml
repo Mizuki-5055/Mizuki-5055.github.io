@@ -1,0 +1,13 @@
+title: Helelism
+email: your-email@example.com
+description: >-
+  A photography portfolio.
+baseurl: ""
+url: "https://mizuki-5055.github.io/helelism"
+github_username: Mizuki-5055
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
