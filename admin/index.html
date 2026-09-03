@@ -1,37 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager · Helelism</title>
+  <title>Helelism CMS</title>
 </head>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/sveltia-cms@0.21.0/dist/sveltia-cms.min.js"></script>
   <script>
-    window.SVELTIA_CMS_CONFIG = {
-      backend: {
-        name: "github",
-        repo: "Mizuki-5055/helelism",
-        branch: "main",
-        base_url: "https://sveltia-cms-auth.hibitaeru.workers.dev"
-      },
-      media_folder: "images/uploads",
-      public_folder: "/images/uploads",
-      collections: [
-        {
-          name: "gallery",
-          label: "Gallery",
-          folder: "_data/gallery",
-          create: true,
-          slug: "{{slug}}",
-          fields: [
-            { label: "Title", name: "title", widget: "string" },
-            { label: "Description", name: "description", widget: "text", required: false },
-            { label: "Image", name: "image", widget: "image" }
-          ]
-        }
-      ]
-    };
+    CMS.init({ config: { backend: { name: 'github', repo: 'Mizuki-5055/Mizuki-5055.github.io', branch: 'main', base_url: 'https://sveltia-cms-auth.hibitaeru.workers.dev' } } });
   </script>
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>
 </html>
