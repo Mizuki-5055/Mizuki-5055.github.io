@@ -1,4 +1,34 @@
 /* ========================================
+   BACKGROUND LAYERS (CMS Editable)
+   ======================================== */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.overlay-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* 80% dark overlay for readability */
+  z-index: 1;
+}
+
+.site-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================
    RESET & BASE – BLACK, SILVER, WHITE
    ======================================== */
 * {
@@ -9,8 +39,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  background: #0a0a0a; /* Pure black base */
-  color: #e0e0e0; /* Silver-tinged white */
+  background: transparent; /* Changed from black so BG image shows */
+  color: #e0e0e0;
   line-height: 1.7;
   padding: 2rem;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +52,7 @@ body {
 .site-header {
   max-width: 1400px;
   margin: 0 auto 3rem auto;
-  border-bottom: 1px solid #333333; /* Dark silver */
+  border-bottom: 1px solid #333333;
 }
 
 .header-inner {
@@ -36,7 +66,7 @@ body {
 
 .site-header h1 a {
   text-decoration: none;
-  color: #ffffff; /* White */
+  color: #ffffff;
   font-weight: 300;
   font-size: 1.8rem;
   letter-spacing: 0.15em;
@@ -54,7 +84,7 @@ body {
 }
 
 .top-nav a {
-  color: #aaaaaa; /* Silver */
+  color: #aaaaaa;
   text-decoration: none;
   font-weight: 300;
   letter-spacing: 0.08em;
@@ -64,7 +94,7 @@ body {
 }
 
 .top-nav a:hover {
-  color: #ffffff; /* White on hover */
+  color: #ffffff;
 }
 
 /* ========================================
@@ -96,7 +126,7 @@ body {
 }
 
 .sidebar-bio {
-  color: #aaaaaa; /* Silver */
+  color: #aaaaaa;
   font-weight: 300;
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -117,7 +147,7 @@ body {
 }
 
 .sidebar-nav a {
-  color: #aaaaaa; /* Silver */
+  color: #aaaaaa;
   text-decoration: none;
   font-weight: 300;
   font-size: 0.95rem;
@@ -126,7 +156,7 @@ body {
 }
 
 .sidebar-nav a:hover {
-  color: #ffffff; /* White */
+  color: #ffffff;
 }
 
 .sidebar-social {
@@ -136,7 +166,7 @@ body {
 }
 
 .sidebar-social a {
-  color: #777777; /* Darker silver */
+  color: #777777;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
@@ -180,7 +210,7 @@ main {
 .hero .tagline {
   font-weight: 300;
   font-size: 1.3rem;
-  color: #aaaaaa; /* Silver */
+  color: #aaaaaa;
   letter-spacing: 0.1em;
   margin-bottom: 2.5rem;
 }
@@ -188,7 +218,7 @@ main {
 .hero .btn {
   display: inline-block;
   padding: 0.8rem 2.8rem;
-  border: 1px solid #555555; /* Silver border */
+  border: 1px solid #555555;
   border-radius: 50px;
   color: #ffffff;
   text-decoration: none;
@@ -220,7 +250,7 @@ main {
 .page-intro {
   font-weight: 300;
   font-size: 1.1rem;
-  color: #aaaaaa; /* Silver */
+  color: #aaaaaa;
   max-width: 600px;
   margin-bottom: 3rem;
   letter-spacing: 0.02em;
@@ -298,7 +328,7 @@ main {
 }
 
 .overlay p {
-  color: #cccccc; /* Light silver */
+  color: #cccccc;
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
@@ -312,7 +342,7 @@ main {
 }
 
 .empty-message {
-  color: #666666; /* Dark silver */
+  color: #666666;
   text-align: center;
   padding: 4rem 0;
   font-size: 1.1rem;
@@ -337,7 +367,7 @@ footer {
   padding-top: 2rem;
   border-top: 1px solid #222222;
   font-size: 0.85rem;
-  color: #555555; /* Dark silver */
+  color: #555555;
   text-align: center;
   letter-spacing: 0.05em;
 }
