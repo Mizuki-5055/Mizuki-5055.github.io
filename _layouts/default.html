@@ -7,16 +7,55 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 </head>
 <body>
-  <header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+
+  <!-- ======= TOP NAVIGATION ======= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <nav class="top-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    {{ content }}
-  </main>
+  <!-- ======= MAIN LAYOUT: SIDEBAR + CONTENT ======= -->
+  <div class="site-container">
 
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <h3>Helelism</h3>
+        <p class="sidebar-bio">Exploring light, shadow, and the spaces between.</p>
+        <hr />
+        <nav class="sidebar-nav">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <hr />
+        <div class="sidebar-social">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">Email</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      {{ content }}
+    </main>
+
+  </div>
+
+  <!-- ======= FOOTER ======= -->
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
   </footer>
+
 </body>
 </html>
