@@ -491,3 +491,140 @@ footer {
 }
 
 /* Optional: If your logo is already white/light, remove the filter line above */
+/* ========================================
+   LIGHTBOX - Full Screen Overlay
+   ======================================== */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-caption {
+  margin-top: 1rem;
+  text-align: center;
+  color: #cccccc;
+}
+
+.lightbox-caption h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.1rem;
+}
+
+.lightbox-caption p {
+  color: #aaaaaa;
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+/* Close Button */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 10001;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 0.6;
+}
+
+/* Navigation Arrows */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50%;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  z-index: 10001;
+  line-height: 1;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lightbox-nav {
+    font-size: 1.8rem;
+    padding: 0.5rem 0.9rem;
+  }
+  .lightbox-prev {
+    left: 10px;
+  }
+  .lightbox-next {
+    right: 10px;
+  }
+  .lightbox-close {
+    top: 15px;
+    right: 20px;
+    font-size: 2.2rem;
+  }
+  .lightbox-image {
+    max-height: 60vh;
+  }
+  .lightbox-caption h3 {
+    font-size: 1.1rem;
+  }
+}
