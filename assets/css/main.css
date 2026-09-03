@@ -483,7 +483,6 @@ footer {
   height: 36px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1); /* Makes dark logo white to fit dark theme */
   transition: opacity 0.3s ease;
 }
 
