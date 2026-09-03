@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helelism CMS</title>
+  <title>Content Manager · Helelism</title>
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/sveltia-cms@0.21.0/dist/sveltia-cms.min.js"></script>
   <script>
-    CMS.init({ config: { backend: { name: 'github', repo: 'Mizuki-5055/Mizuki-5055.github.io', branch: 'main', base_url: 'https://sveltia-cms-auth.hibitaeru.workers.dev' } } });
+    window.SVELTIA_CMS_CONFIG = {
+      backend: {
+        name: "github",
+        repo: "Mizuki-5055/Mizuki-5055.github.io",
+        branch: "main",
+        base_url: "https://sveltia-cms-auth.hibitaeru.workers.dev"
+      },
+      media_folder: "images/uploads",
+      public_folder: "/images/uploads",
+      collections: [
+        {
+          name: "gallery_config",
+          label: "Gallery",
+          files: [
+            {
+              file: "_data/gallery.yml",
+              label: "Gallery Settings",
+              name: "gallery",
+              fields: [
+                { label: "Page Heading", name: "heading", widget: "string", required: false },
+                { label: "Intro Text", name: "intro", widget: "text", required: false },
+                {
+                  name: "items",
+                  label: "Gallery Items",
+                  widget: "list",
+                  fields: [
+                    { label: "Title", name: "title", widget: "string" },
+                    { label: "Description", name: "description", widget: "text", required: false },
+                    { label: "Image", name: "image", widget: "image" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
   </script>
+  <!-- We keep your preferred CDN link because it uses the global variable method -->
+  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>
 </html>
