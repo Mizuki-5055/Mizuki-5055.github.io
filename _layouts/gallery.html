@@ -5,27 +5,29 @@ layout: default
 {% assign gallery_data = site.data.gallery %}
 
 {% if gallery_data.heading %}
-  <h2>{{ gallery_data.heading }}</h2>
+  <h2 class="page-heading">{{ gallery_data.heading }}</h2>
 {% endif %}
 
 {% if gallery_data.intro %}
-  <p>{{ gallery_data.intro }}</p>
+  <p class="page-intro">{{ gallery_data.intro }}</p>
 {% endif %}
 
 <section class="gallery-grid">
   {% if gallery_data.items and gallery_data.items.size > 0 %}
     {% for item in gallery_data.items %}
       <div class="gallery-item">
-        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" />
-        <div class="info">
-          <h3>{{ item.title }}</h3>
-          {% if item.description and item.description != '' %}
-            <p>{{ item.description }}</p>
-          {% endif %}
+        <div class="image-wrapper">
+          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" />
+          <div class="overlay">
+            <h3>{{ item.title }}</h3>
+            {% if item.description and item.description != '' %}
+              <p>{{ item.description }}</p>
+            {% endif %}
+          </div>
         </div>
       </div>
     {% endfor %}
   {% else %}
-    <p>No gallery entries yet. Add some via the CMS at <a href="/admin/">/admin/</a>.</p>
+    <p class="empty-message">No gallery entries yet. Add some via the CMS at <a href="/admin/">/admin/</a>.</p>
   {% endif %}
 </section>
