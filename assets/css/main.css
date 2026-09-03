@@ -1,4 +1,6 @@
-/* Reset & Base - Dark Cinematic */
+/* ========================================
+   RESET & BASE – BLACK, SILVER, WHITE
+   ======================================== */
 * {
   margin: 0;
   padding: 0;
@@ -7,28 +9,34 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  background: #0d0d0d;
-  color: #e8e8e8;
+  background: #0a0a0a; /* Pure black base */
+  color: #e0e0e0; /* Silver-tinged white */
   line-height: 1.7;
   padding: 2rem;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Header - Minimal & Elegant */
-header {
+/* ========================================
+   TOP NAVIGATION
+   ======================================== */
+.site-header {
   max-width: 1400px;
   margin: 0 auto 3rem auto;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #333333; /* Dark silver */
+}
+
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 0 1.5rem 0;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
-header h1 a {
+.site-header h1 a {
   text-decoration: none;
-  color: #f0f0f0;
+  color: #ffffff; /* White */
   font-weight: 300;
   font-size: 1.8rem;
   letter-spacing: 0.15em;
@@ -36,43 +44,128 @@ header h1 a {
   transition: opacity 0.3s ease;
 }
 
-header h1 a:hover {
-  opacity: 0.7;
+.site-header h1 a:hover {
+  opacity: 0.6;
 }
 
-/* Navigation Menu */
-nav {
+.top-nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-nav a {
-  color: rgba(255, 255, 255, 0.5);
+.top-nav a {
+  color: #aaaaaa; /* Silver */
   text-decoration: none;
   font-weight: 300;
   letter-spacing: 0.08em;
   font-size: 0.95rem;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+.top-nav a:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+.site-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+}
+
+.sidebar-block h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-bio {
+  color: #aaaaaa; /* Silver */
+  font-weight: 300;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.sidebar-block hr {
+  border: none;
+  border-top: 1px solid #333333;
+  margin: 1rem 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-nav a {
+  color: #aaaaaa; /* Silver */
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #ffffff; /* White */
+}
+
+.sidebar-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sidebar-social a {
+  color: #777777; /* Darker silver */
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.sidebar-social a:hover {
   color: #ffffff;
 }
 
-/* Main Container */
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
 main {
-  max-width: 1400px;
-  margin: 0 auto;
+  flex: 1;
+  min-width: 0;
 }
 
-/* Hero Section (Homepage) */
+/* ========================================
+   HERO SECTION (HOMEPAGE)
+   ======================================== */
 .hero {
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1rem 0;
 }
 
 .hero h1 {
@@ -87,7 +180,7 @@ main {
 .hero .tagline {
   font-weight: 300;
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #aaaaaa; /* Silver */
   letter-spacing: 0.1em;
   margin-bottom: 2.5rem;
 }
@@ -95,7 +188,7 @@ main {
 .hero .btn {
   display: inline-block;
   padding: 0.8rem 2.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #555555; /* Silver border */
   border-radius: 50px;
   color: #ffffff;
   text-decoration: none;
@@ -108,11 +201,13 @@ main {
 
 .hero .btn:hover {
   background: #ffffff;
-  color: #0d0d0d;
+  color: #0a0a0a;
   border-color: #ffffff;
 }
 
-/* Page Heading & Intro (Gallery page) */
+/* ========================================
+   GALLERY PAGE
+   ======================================== */
 .page-heading {
   font-weight: 300;
   font-size: 2.8rem;
@@ -125,16 +220,15 @@ main {
 .page-intro {
   font-weight: 300;
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #aaaaaa; /* Silver */
   max-width: 600px;
   margin-bottom: 3rem;
   letter-spacing: 0.02em;
 }
 
-/* Gallery Grid - Cinematic */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 0.5rem;
 }
@@ -151,29 +245,28 @@ main {
   overflow: hidden;
   border-radius: 12px;
   background: #1a1a1a;
+  border: 1px solid #222222;
 }
 
 .image-wrapper img {
   width: 100%;
-  height: 300px;
+  height: 280px;
   object-fit: cover;
   display: block;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* The Zoom on Hover */
 .gallery-item:hover .image-wrapper img {
   transform: scale(1.05);
 }
 
-/* The Overlay - Fades in on hover */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
@@ -192,10 +285,10 @@ main {
 .overlay h3 {
   color: #ffffff;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   transform: translateY(10px);
   transition: transform 0.4s ease;
 }
@@ -205,9 +298,9 @@ main {
 }
 
 .overlay p {
-  color: rgba(255, 255, 255, 0.75);
+  color: #cccccc; /* Light silver */
   font-weight: 300;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
   max-width: 80%;
   transform: translateY(10px);
@@ -218,9 +311,8 @@ main {
   transform: translateY(0);
 }
 
-/* Empty message */
 .empty-message {
-  color: rgba(255, 255, 255, 0.4);
+  color: #666666; /* Dark silver */
   text-align: center;
   padding: 4rem 0;
   font-size: 1.1rem;
@@ -228,56 +320,91 @@ main {
 }
 
 .empty-message a {
-  color: #ffffff;
+  color: #aaaaaa;
   text-decoration: underline;
-  opacity: 0.6;
 }
 
 .empty-message a:hover {
-  opacity: 1;
+  color: #ffffff;
 }
 
-/* Footer */
+/* ========================================
+   FOOTER
+   ======================================== */
 footer {
   max-width: 1400px;
   margin: 4rem auto 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #222222;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.25);
+  color: #555555; /* Dark silver */
   text-align: center;
   letter-spacing: 0.05em;
 }
 
-/* Responsive */
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .site-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 2rem;
+  }
+
+  .sidebar-block {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .sidebar-social {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding: 1rem;
   }
-  
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-nav {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
-  
+
   .image-wrapper img {
     height: 200px;
   }
-  
+
   .page-heading {
     font-size: 2rem;
   }
-  
+
   .hero h1 {
     font-size: 3rem;
   }
-  
+
   .hero .tagline {
     font-size: 1rem;
-  }
-  
-  nav {
-    gap: 1rem;
   }
 }
 
@@ -286,16 +413,20 @@ footer {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .image-wrapper img {
     height: 260px;
   }
-  
+
   .overlay h3 {
     font-size: 1.4rem;
   }
-  
+
   .hero h1 {
     font-size: 2.2rem;
+  }
+
+  .sidebar-block {
+    min-width: 100%;
   }
 }
