@@ -40,13 +40,79 @@ header h1 a:hover {
   opacity: 0.7;
 }
 
+/* Navigation Menu */
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
 /* Main Container */
 main {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* Page Heading & Intro */
+/* Hero Section (Homepage) */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-weight: 300;
+  font-size: 4.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 0.8rem 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+}
+
+/* Page Heading & Intro (Gallery page) */
 .page-heading {
   font-weight: 300;
   font-size: 2.8rem;
@@ -201,6 +267,18 @@ footer {
   .page-heading {
     font-size: 2rem;
   }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1rem;
+  }
+  
+  nav {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -215,5 +293,9 @@ footer {
   
   .overlay h3 {
     font-size: 1.4rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
   }
 }
