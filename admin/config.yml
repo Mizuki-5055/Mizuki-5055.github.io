@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Mizuki-5055/helelism
+  repo: Mizuki-5055/Mizuki-5055.github.io
   branch: main
   base_url: https://sveltia-cms-auth.hibitaeru.workers.dev
 
