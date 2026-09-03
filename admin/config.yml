@@ -8,11 +8,14 @@ media_folder: images/uploads
 public_folder: /images/uploads
 
 collections:
-  - name: pages
-    label: Pages
+  # ==========================================
+  # GALLERY COLLECTION
+  # ==========================================
+  - name: gallery
+    label: Gallery
     files:
       - file: _data/gallery.yml
-        label: Gallery
+        label: Gallery Settings
         name: gallery
         fields:
           - { label: Page Heading, name: heading, widget: string, required: false }
@@ -24,3 +27,21 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text, required: false }
               - { label: Image, name: image, widget: image }
+
+  # ==========================================
+  # SITE SETTINGS COLLECTION (NEW)
+  # ==========================================
+  - name: settings
+    label: Site Settings
+    files:
+      - file: _data/settings.yml
+        label: Background
+        name: background
+        fields:
+          - { 
+              label: Background Image, 
+              name: background_image, 
+              widget: image, 
+              required: false,
+              hint: "Upload a large image. A dark overlay keeps text readable."
+            }
