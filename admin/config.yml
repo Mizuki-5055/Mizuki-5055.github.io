@@ -8,13 +8,10 @@ media_folder: images/uploads
 public_folder: /images/uploads
 
 collections:
-  # ==========================================
-  # GALLERY COLLECTION
-  # ==========================================
   - name: gallery
     label: Gallery
     files:
-      - file: _data/gallery.yml
+      - file: _data/test.yml
         label: Gallery Settings
         name: gallery
         fields:
@@ -28,9 +25,6 @@ collections:
               - { label: Description, name: description, widget: text, required: false }
               - { label: Image, name: image, widget: image }
 
-  # ==========================================
-  # SITE SETTINGS COLLECTION (NEW)
-  # ==========================================
   - name: settings
     label: Site Settings
     files:
