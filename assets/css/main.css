@@ -460,3 +460,35 @@ footer {
     min-width: 100%;
   }
 }
+
+/* ========================================
+   SITE LOGO (Header)
+   ======================================== */
+.site-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-title-group h1 {
+  margin: 0;
+}
+
+.logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1); /* Makes dark logo white to fit dark theme */
+  transition: opacity 0.3s ease;
+}
+
+.logo-link:hover .site-logo {
+  opacity: 0.7;
+}
+
+/* Optional: If your logo is already white/light, remove the filter line above */
