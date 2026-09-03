@@ -3,4 +3,7 @@ intro: "test"
 items:
   - title: "IRCNA"
     description: ""
-    image: "/images/uploads/Untitled design.png"
+    image: "/images/uploads/bkgrnd.jpg"
+  - title: "Second Image"
+    description: "A test image"
+    image: "/images/uploads/bkgrnd.jpg"
