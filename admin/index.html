@@ -41,11 +41,30 @@
               ]
             }
           ]
+        },
+        {
+          name: "site_settings",
+          label: "Site Settings",
+          files: [
+            {
+              file: "_data/settings.yml",
+              label: "Background",
+              name: "background",
+              fields: [
+                { 
+                  label: "Background Image", 
+                  name: "background_image", 
+                  widget: "image", 
+                  required: false,
+                  hint: "Upload a large image. A dark overlay will keep text readable."
+                }
+              ]
+            }
+          ]
         }
       ]
     };
   </script>
-  <!-- We keep your preferred CDN link because it uses the global variable method -->
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>
 </html>
