@@ -1,69 +1,105 @@
 ---
-layout: default
+layout: error
 title: Page Not Found · Helelism
 ---
 
 <style>
-  /* Hide the global site background on this page */
-  .bg-layer,
-  .overlay-layer {
-    display: none !important;
+  /* Reset body padding for this page only */
+  body.error-page-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #0a0a0a;
   }
 
-  /* Set 404 image as full-page background for the entire wrapper */
-  .site-wrapper {
+  /* The wrapper takes full viewport height */
+  .error-wrapper {
+    min-height: 100vh;
     background-image: url('{{ "/images/uploads/404.png" | relative_url }}');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
     z-index: 0;
   }
 
-  /* Add a dark overlay specifically for readability on this page */
-  .site-wrapper::before {
+  /* Dark overlay for readability */
+  .error-wrapper::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust darkness here if needed */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
     pointer-events: none;
   }
 
-  /* Ensure header, content, and footer sit above the overlay */
-  .site-header,
-  .site-container,
-  footer {
+  /* Content sits above overlay */
+  .error-wrapper .hero {
     position: relative;
     z-index: 2;
+    padding: 2rem;
   }
 
-  /* Hero text adjustments for readability */
-  .hero.error-page {
-    min-height: 60vh;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
-  }
-
-  .hero.error-page h1 {
+  .error-wrapper .hero h1 {
+    font-weight: 300;
+    font-size: 4rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
   }
 
-  .hero.error-page .tagline {
+  .error-wrapper .hero .tagline {
+    font-weight: 300;
+    font-size: 1.3rem;
     color: #dddddd;
+    letter-spacing: 0.1em;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
 
-  /* Remove the small image from the content area */
-  .hero.error-page .error-image {
-    display: none;
+  .error-wrapper .hero .btn {
+    display: inline-block;
+    padding: 0.8rem 2.8rem;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+
+  .error-wrapper .hero .btn:hover {
+    background: #ffffff;
+    color: #0a0a0a;
+    border-color: #ffffff;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .error-wrapper .hero h1 {
+      font-size: 2.5rem;
+    }
+    .error-wrapper .hero .tagline {
+      font-size: 1rem;
+    }
   }
 </style>
 
-<section class="hero error-page">
+<section class="hero">
   <h1>You fucked up somewhere...</h1>
   <p class="tagline">Lost Amongst the Moonlight.</p>
   <a href="{{ '/' | relative_url }}" class="btn">Return Home</a>
