@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  <link rel="icon" href="{{ '/images/uploads/LOGOHLL.png' | relative_url }}" type="image/png" />
 </head>
 <body>
 
@@ -25,7 +26,12 @@
     <!-- TOP NAVIGATION -->
     <header class="site-header">
       <div class="header-inner">
-        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        <div class="site-title-group">
+          <a href="{{ '/' | relative_url }}" class="logo-link">
+            <img src="{{ '/images/uploads/LOGOHLL.png' | relative_url }}" alt="Helelism Logo" class="site-logo" />
+          </a>
+          <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        </div>
         <nav class="top-nav">
           <a href="{{ '/' | relative_url }}">Home</a>
           <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
