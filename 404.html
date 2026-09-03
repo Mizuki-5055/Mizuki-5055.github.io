@@ -3,9 +3,68 @@ layout: default
 title: Page Not Found · Helelism
 ---
 
+<style>
+  /* Hide the global site background on this page */
+  .bg-layer,
+  .overlay-layer {
+    display: none !important;
+  }
+
+  /* Set 404 image as full-page background for the entire wrapper */
+  .site-wrapper {
+    background-image: url('{{ "/images/uploads/404.png" | relative_url }}');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+  }
+
+  /* Add a dark overlay specifically for readability on this page */
+  .site-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Adjust darkness here if needed */
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Ensure header, content, and footer sit above the overlay */
+  .site-header,
+  .site-container,
+  footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Hero text adjustments for readability */
+  .hero.error-page {
+    min-height: 60vh;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
+  }
+
+  .hero.error-page h1 {
+    color: #ffffff;
+  }
+
+  .hero.error-page .tagline {
+    color: #dddddd;
+  }
+
+  /* Remove the small image from the content area */
+  .hero.error-page .error-image {
+    display: none;
+  }
+</style>
+
 <section class="hero error-page">
-  <img src="{{ '/images/uploads/404.png' | relative_url }}" alt="404 - Page Not Found" class="error-image" />
-  <h1>Lost amongst the Moonlight</h1>
-  <p class="tagline">You fucked up somewhere.</p>
+  <h1>You fucked up somewhere...</h1>
+  <p class="tagline">Lost Amongst the Moonlight.</p>
   <a href="{{ '/' | relative_url }}" class="btn">Return Home</a>
 </section>
