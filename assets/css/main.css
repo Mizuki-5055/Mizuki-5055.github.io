@@ -628,3 +628,20 @@ footer {
     font-size: 1.1rem;
   }
 }
+
+/* ========================================
+   404 ERROR PAGE
+   ======================================== */
+.error-page .error-image {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .error-page .error-image {
+    max-width: 180px;
+  }
+}
