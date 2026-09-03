@@ -1,70 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager · Helelism</title>
 </head>
 <body>
-  <script>
-    window.SVELTIA_CMS_CONFIG = {
-      backend: {
-        name: "github",
-        repo: "Mizuki-5055/Mizuki-5055.github.io",
-        branch: "main",
-        base_url: "https://sveltia-cms-auth.hibitaeru.workers.dev"
-      },
-      media_folder: "images/uploads",
-      public_folder: "/images/uploads",
-      collections: [
-        {
-          name: "gallery_config",
-          label: "Gallery",
-          files: [
-            {
-              file: "_data/gallery.yml",
-              label: "Gallery Settings",
-              name: "gallery",
-              fields: [
-                { label: "Page Heading", name: "heading", widget: "string", required: false },
-                { label: "Intro Text", name: "intro", widget: "text", required: false },
-                {
-                  name: "items",
-                  label: "Gallery Items",
-                  widget: "list",
-                  fields: [
-                    { label: "Title", name: "title", widget: "string" },
-                    { label: "Description", name: "description", widget: "text", required: false },
-                    { label: "Image", name: "image", widget: "image" }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          name: "site_settings",
-          label: "Site Settings",
-          files: [
-            {
-              file: "_data/settings.yml",
-              label: "Background",
-              name: "background",
-              fields: [
-                { 
-                  label: "Background Image", 
-                  name: "background_image", 
-                  widget: "image", 
-                  required: false,
-                  hint: "Upload a large image. A dark overlay will keep text readable."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    };
-  </script>
+  <!-- The CMS automatically reads admin/config.yml -->
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>
 </html>
