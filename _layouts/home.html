@@ -1,0 +1,101 @@
+---
+layout: default
+---
+
+{% assign gallery_items = site.data.test.items | slice: 0, 1 %}
+{% assign hymns_items = site.data.hymns.items | slice: 0, 1 %}
+{% assign literature_items = site.data.literature.items | slice: 0, 1 %}
+{% assign scripture_items = site.data.scripture.items | slice: 0, 1 %}
+
+{% assign hero = site.data.homepage %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>{{ hero.hero_title | default: "Helelism" }}</h1>
+  <p class="tagline">{{ hero.hero_tagline | default: "Exploring light, shadow, and the spaces between." }}</p>
+</section>
+
+<!-- Content Grid -->
+<section class="home-grid">
+  <!-- Gallery -->
+  <div class="home-card">
+    <h2>Gallery</h2>
+    {% if gallery_items and gallery_items.size > 0 %}
+      {% for item in gallery_items %}
+        <div class="card-content">
+          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="card-image" />
+          <h3>{{ item.title }}</h3>
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="empty-message">No gallery entries yet.</p>
+    {% endif %}
+    <a href="{{ '/gallery/' | relative_url }}" class="card-btn">View All</a>
+  </div>
+
+  <!-- Hymns -->
+  <div class="home-card">
+    <h2>Hymns</h2>
+    {% if hymns_items and hymns_items.size > 0 %}
+      {% for item in hymns_items %}
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          {% if item.author %}
+            <p class="meta">By {{ item.author }}</p>
+          {% endif %}
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="empty-message">No hymns added yet.</p>
+    {% endif %}
+    <a href="{{ '/hymns/' | relative_url }}" class="card-btn">View All</a>
+  </div>
+
+  <!-- Literature -->
+  <div class="home-card">
+    <h2>Literature</h2>
+    {% if literature_items and literature_items.size > 0 %}
+      {% for item in literature_items %}
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          {% if item.author %}
+            <p class="meta">By {{ item.author }}</p>
+          {% endif %}
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="empty-message">No literature entries yet.</p>
+    {% endif %}
+    <a href="{{ '/literature/' | relative_url }}" class="card-btn">View All</a>
+  </div>
+
+  <!-- Scripture -->
+  <div class="home-card">
+    <h2>Scripture</h2>
+    {% if scripture_items and scripture_items.size > 0 %}
+      {% for item in scripture_items %}
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          {% if item.reference %}
+            <p class="meta">{{ item.reference }}</p>
+          {% endif %}
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="empty-message">No scripture entries yet.</p>
+    {% endif %}
+    <a href="{{ '/scripture/' | relative_url }}" class="card-btn">View All</a>
+  </div>
+</section>
