@@ -1,0 +1,9 @@
+heading: "Scripture"
+intro: "Sacred texts and verses for reflection."
+items:
+  - title: "Psalm 23"
+    reference: "Psalm 23:1-6"
+    description: "The Lord is my shepherd; I shall not want."
+  - title: "The Beatitudes"
+    reference: "Matthew 5:3-12"
+    description: "Blessed are the poor in spirit, for theirs is the kingdom of heaven."
