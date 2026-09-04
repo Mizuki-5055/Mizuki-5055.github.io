@@ -3,8 +3,10 @@ layout: default
 title: Helelism · Home
 ---
 
+{% assign hero = site.data.homepage %}
+
 <section class="hero">
-  <h1>Helelism</h1>
-  <p class="tagline">Existence Through My Helelistic Perspective</p>
-  <a href="/gallery/" class="btn">View Gallery</a>
+  <h1>{{ hero.hero_title | default: "Helelism" }}</h1>
+  <p class="tagline">{{ hero.hero_tagline | default: "Exploring light, shadow, and the spaces between." }}</p>
+  <a href="{{ hero.hero_button_url | default: '/gallery/' }}" class="btn">{{ hero.hero_button_text | default: "View Gallery" }}</a>
 </section>
