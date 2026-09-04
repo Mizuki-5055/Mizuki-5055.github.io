@@ -645,3 +645,57 @@ footer {
     max-width: 180px;
   }
 }
+
+/* ========================================
+   LIST GRID (Hymns, Literature, Scripture)
+   ======================================== */
+.list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.list-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid #333333;
+  padding: 1.5rem 2rem;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.list-item:hover {
+  border-left-color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.list-item h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.1rem;
+}
+
+.list-item .meta {
+  color: #aaaaaa;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.list-item p {
+  color: #cccccc;
+  font-weight: 300;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .list-item {
+    padding: 1rem 1.25rem;
+  }
+  .list-item h3 {
+    font-size: 1.2rem;
+  }
+}
