@@ -83,3 +83,63 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
+
+  # ==========================================
+  # HYMNS
+  # ==========================================
+  - name: hymns
+    label: Hymns
+    files:
+      - file: _data/hymns.yml
+        label: Hymns List
+        name: hymns
+        fields:
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - name: items
+            label: "Hymns"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+
+  # ==========================================
+  # LITERATURE
+  # ==========================================
+  - name: literature
+    label: Literature
+    files:
+      - file: _data/literature.yml
+        label: Literature List
+        name: literature
+        fields:
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - name: items
+            label: "Works"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+
+  # ==========================================
+  # SCRIPTURE
+  # ==========================================
+  - name: scripture
+    label: Scripture
+    files:
+      - file: _data/scripture.yml
+        label: Scripture List
+        name: scripture
+        fields:
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - name: items
+            label: "Verses"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Reference", name: "reference", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
