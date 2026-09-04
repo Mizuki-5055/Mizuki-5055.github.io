@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign about = site.data.about %}
+
+<section class="about-page">
+  {% if about.heading %}
+    <h2 class="page-heading">{{ about.heading }}</h2>
+  {% endif %}
+
+  <div class="about-body">
+    {{ about.body | markdownify }}
+  </div>
+</section>
