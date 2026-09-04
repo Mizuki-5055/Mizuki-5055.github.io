@@ -28,16 +28,17 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
 
   # ==========================================
-  # SITE SETTINGS (Background)
+  # SITE SETTINGS (Background + Bio)
   # ==========================================
   - name: settings
     label: Site Settings
     files:
       - file: _data/settings.yml
-        label: Background
-        name: background
+        label: Background & Bio
+        name: settings
         fields:
           - { label: "Background Image", name: "background_image", widget: "image", required: false }
+          - { label: "Sidebar Bio", name: "sidebar_bio", widget: "text", required: false }
 
   # ==========================================
   # HOMEPAGE (Hero)
