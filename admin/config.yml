@@ -41,7 +41,7 @@ collections:
           - { label: "Background Image", name: "background_image", widget: "image", required: false }
 
   # ==========================================
-  # HOMEPAGE (NEW)
+  # HOMEPAGE (Hero)
   # ==========================================
   - name: homepage
     label: Homepage
@@ -54,3 +54,32 @@ collections:
           - { label: "Hero Tagline", name: "hero_tagline", widget: "text" }
           - { label: "Button Text", name: "hero_button_text", widget: "string" }
           - { label: "Button URL", name: "hero_button_url", widget: "string" }
+
+  # ==========================================
+  # NAVIGATION (NEW)
+  # ==========================================
+  - name: navigation
+    label: Navigation
+    files:
+      - file: _data/navigation.yml
+        label: Menus
+        name: menus
+        fields:
+          - label: "Top Navigation"
+            name: "top_nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Sidebar Navigation"
+            name: "sidebar_nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Social Links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
