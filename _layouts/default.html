@@ -33,10 +33,9 @@
           <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         </div>
         <nav class="top-nav">
-          <a href="{{ '/' | relative_url }}">Home</a>
-          <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          {% for item in site.data.navigation.top_nav %}
+            <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+          {% endfor %}
         </nav>
       </div>
     </header>
@@ -51,16 +50,15 @@
           <p class="sidebar-bio">Exploring light, shadow, and the spaces between.</p>
           <hr />
           <nav class="sidebar-nav">
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            {% for item in site.data.navigation.sidebar_nav %}
+              <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+            {% endfor %}
           </nav>
           <hr />
           <div class="sidebar-social">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">Email</a>
+            {% for item in site.data.navigation.social_links %}
+              <a href="{{ item.url }}">{{ item.label }}</a>
+            {% endfor %}
           </div>
         </div>
       </aside>
