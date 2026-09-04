@@ -1,6 +1,8 @@
 top_nav:
   - label: Home
     url: /
+  - label: Hymns
+    url: /hymns/
   - label: Gallery
     url: /gallery/
   - label: Literature
