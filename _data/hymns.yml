@@ -1,0 +1,9 @@
+heading: "Hymns"
+intro: "A collection of sacred hymns and spiritual songs."
+items:
+  - title: "Amazing Grace"
+    author: "John Newton"
+    description: "A timeless hymn about redemption and grace."
+  - title: "How Great Thou Art"
+    author: "Carl Boberg"
+    description: "A hymn celebrating the majesty of creation."
