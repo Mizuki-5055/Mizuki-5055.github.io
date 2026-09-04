@@ -1,12 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager · Helelism</title>
 </head>
 <body>
-  <!-- The CMS automatically reads admin/config.yml -->
+  <script>
+    window.SVELTIA_CMS_CONFIG = {
+      backend: {
+        name: "github",
+        repo: "Mizuki-5055/Mizuki-5055.github.io",
+        branch: "main",
+        base_url: "https://sveltia-cms-auth.hibitaeru.workers.dev"
+      },
+      media_folder: "images/uploads",
+      public_folder: "/images/uploads",
+      collections: [
+        // ==========================================
+        // GALLERY
+        // ==========================================
+        {
+          name: "gallery",
+          label: "Gallery",
+          files: [
+            {
+              file: "_data/test.yml",
+              label: "Gallery Settings",
+              name: "gallery",
+              fields: [
+                { label: "Page Heading", name: "heading", widget: "string", required: false },
+                { label: "Intro Text", name: "intro", widget: "text", required: false },
+                {
+                  name: "items",
+                  label: "Gallery Items",
+                  widget: "list",
+                  fields: [
+                    { label: "Title", name: "title", widget: "string" },
+                    { label: "Description", name: "description", widget: "text", required: false },
+                    { label: "Image", name: "image", widget: "image" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        // ==========================================
+        // SITE SETTINGS (Background)
+        // ==========================================
+        {
+          name: "settings",
+          label: "Site Settings",
+          files: [
+            {
+              file: "_data/settings.yml",
+              label: "Background",
+              name: "background",
+              fields: [
+                { label: "Background Image", name: "background_image", widget: "image", required: false }
+              ]
+            }
+          ]
+        },
+        // ==========================================
+        // HOMEPAGE (Hero)
+        // ==========================================
+        {
+          name: "homepage",
+          label: "Homepage",
+          files: [
+            {
+              file: "_data/homepage.yml",
+              label: "Hero Section",
+              name: "hero",
+              fields: [
+                { label: "Hero Title", name: "hero_title", widget: "string" },
+                { label: "Hero Tagline", name: "hero_tagline", widget: "text" },
+                { label: "Button Text", name: "hero_button_text", widget: "string" },
+                { label: "Button URL", name: "hero_button_url", widget: "string" }
+              ]
+            }
+          ]
+        },
+        // ==========================================
+        // NAVIGATION (Top, Sidebar, Social)
+        // ==========================================
+        {
+          name: "navigation",
+          label: "Navigation",
+          files: [
+            {
+              file: "_data/navigation.yml",
+              label: "Menus",
+              name: "menus",
+              fields: [
+                {
+                  label: "Top Navigation",
+                  name: "top_nav",
+                  widget: "list",
+                  fields: [
+                    { label: "Label", name: "label", widget: "string" },
+                    { label: "URL", name: "url", widget: "string" }
+                  ]
+                },
+                {
+                  label: "Sidebar Navigation",
+                  name: "sidebar_nav",
+                  widget: "list",
+                  fields: [
+                    { label: "Label", name: "label", widget: "string" },
+                    { label: "URL", name: "url", widget: "string" }
+                  ]
+                },
+                {
+                  label: "Social Links",
+                  name: "social_links",
+                  widget: "list",
+                  fields: [
+                    { label: "Label", name: "label", widget: "string" },
+                    { label: "URL", name: "url", widget: "string" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+  </script>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>
 </html>
