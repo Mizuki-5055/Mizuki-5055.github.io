@@ -1,12 +1,4 @@
 ---
-layout: default
+layout: home
 title: Helelism · Home
 ---
-
-{% assign hero = site.data.homepage %}
-
-<section class="hero">
-  <h1>{{ hero.hero_title | default: "Helelism" }}</h1>
-  <p class="tagline">{{ hero.hero_tagline | default: "A Collection of Writings, Photographs, Thoughts, and Stories on Existence." }}</p>
-  <a href="{{ hero.hero_button_url | default: '/gallery/' }}" class="btn">{{ hero.hero_button_text | default: "View Gallery" }}</a>
-</section>
