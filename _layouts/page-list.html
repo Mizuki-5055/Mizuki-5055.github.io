@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+{% assign page_data = site.data[page.data_file] %}
+
+{% if page_data.heading %}
+  <h2 class="page-heading">{{ page_data.heading }}</h2>
+{% endif %}
+
+{% if page_data.intro %}
+  <p class="page-intro">{{ page_data.intro }}</p>
+{% endif %}
+
+<section class="list-grid">
+  {% if page_data.items and page_data.items.size > 0 %}
+    {% for item in page_data.items %}
+      <div class="list-item">
+        <h3>{{ item.title }}</h3>
+        {% if item.author %}
+          <p class="meta">By {{ item.author }}</p>
+        {% endif %}
+        {% if item.reference %}
+          <p class="meta">{{ item.reference }}</p>
+        {% endif %}
+        {% if item.description %}
+          <p>{{ item.description }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="empty-message">No entries yet. Add some via the CMS.</p>
+  {% endif %}
+</section>
