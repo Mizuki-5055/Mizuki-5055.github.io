@@ -1,31 +1,27 @@
 top_nav:
-  - label: "Home"
-    url: "/"
-  - label: "Gallery"
-    url: "/gallery/"
-  - label: "Hymns"
-    url: "/hymns/"
-  - label: "Literature"
-    url: "/literature/"
-  - label: "Scripture"
-    url: "/scripture/"
-
+  - label: Home
+    url: /
+  - label: Gallery
+    url: /gallery/
+  - label: Hymns
+    url: /hymns/
+  - label: Literature
+    url: /literature/
+  - label: Scripture
+    url: /scripture/
 sidebar_nav:
-  - label: "Home"
-    url: "/"
-  - label: "Gallery"
-    url: "/gallery/"
-  - label: "Hymns"
-    url: "/hymns/"
-  - label: "Literature"
-    url: "/literature/"
-  - label: "Scripture"
-    url: "/scripture/"
-
+  - label: Home
+    url: /
+  - label: Gallery
+    url: /gallery/
+  - label: Hymns
+    url: /hymns/
+  - label: Literature
+    url: /literature/
+  - label: Scripture
+    url: /scripture/
 social_links:
-  - label: "Instagram"
-    url: "https://instagram.com/"
-  - label: "Twitter"
-    url: "https://twitter.com/"
-  - label: "Email"
-    url: "mailto:your-email@example.com"
+  - label: Instagram
+    url: https://instagram.com/helelism
+  - label: Email
+    url: Hibitaeru@gmail.com
