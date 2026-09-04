@@ -47,7 +47,7 @@
       <aside class="sidebar">
         <div class="sidebar-block">
           <h3>Helelism</h3>
-          <p class="sidebar-bio">Exploring light, shadow, and the spaces between.</p>
+          <p class="sidebar-bio">{{ site.data.settings.sidebar_bio | default: "Exploring light, shadow, and the spaces between." }}</p>
           <hr />
           <nav class="sidebar-nav">
             {% for item in site.data.navigation.sidebar_nav %}
