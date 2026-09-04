@@ -1,0 +1,9 @@
+heading: "Literature"
+intro: "Essays, poems, and writings on faith and life."
+items:
+  - title: "The Weight of Glory"
+    author: "C.S. Lewis"
+    description: "An essay on the nature of human longing and eternal hope."
+  - title: "Pilgrim's Progress"
+    author: "John Bunyan"
+    description: "An allegorical journey of faith."
