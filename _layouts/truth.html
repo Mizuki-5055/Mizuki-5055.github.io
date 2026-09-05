@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% assign truth = site.data.truth %}
+
+<section class="truth-page">
+  <!-- Optional Image -->
+  {% if truth.image and truth.image != '' %}
+    <img src="{{ truth.image | relative_url }}" alt="{{ truth.title | default: 'Truth' }}" class="truth-banner" />
+  {% endif %}
+
+  <!-- Title -->
+  {% if truth.title %}
+    <h2 class="page-heading">{{ truth.title }}</h2>
+  {% endif %}
+
+  <!-- Subtitle -->
+  {% if truth.subtitle %}
+    <p class="page-intro">{{ truth.subtitle }}</p>
+  {% endif %}
+
+  <!-- Body -->
+  {% if truth.body %}
+    <div class="truth-body">
+      {{ truth.body | markdownify }}
+    </div>
+  {% endif %}
+
+  <!-- Dropdowns -->
+  {% if truth.dropdowns and truth.dropdowns.size > 0 %}
+    <div class="truth-dropdowns">
+      {% for dropdown in truth.dropdowns %}
+        <details class="truth-details">
+          <summary>{{ dropdown.heading }}</summary>
+          <div class="details-content">
+            {{ dropdown.content | markdownify }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
