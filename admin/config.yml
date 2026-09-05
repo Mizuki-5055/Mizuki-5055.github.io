@@ -24,7 +24,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Description", name: "description", widget: "markdown", required: false }
               - { label: "Image", name: "image", widget: "image" }
 
   # ==========================================
@@ -100,7 +100,7 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Author", name: "author", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Description", name: "description", widget: "markdown", required: false }
 
   # ==========================================
   # LITERATURE
@@ -120,7 +120,7 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Author", name: "author", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Description", name: "description", widget: "markdown", required: false }
 
   # ==========================================
   # SCRIPTURE
@@ -140,10 +140,10 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Reference", name: "reference", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Description", name: "description", widget: "markdown", required: false }
 
   # ==========================================
-  # ABOUT (NEW)
+  # ABOUT
   # ==========================================
   - name: about
     label: About
