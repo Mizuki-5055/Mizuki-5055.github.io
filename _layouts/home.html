@@ -26,7 +26,7 @@ layout: default
           <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="card-image" />
           <h3>{{ item.title }}</h3>
           {% if item.description %}
-            <p>{{ item.description }}</p>
+            <p>{{ item.description | markdownify }}</p>
           {% endif %}
         </div>
       {% endfor %}
@@ -47,7 +47,7 @@ layout: default
             <p class="meta">By {{ item.author }}</p>
           {% endif %}
           {% if item.description %}
-            <p>{{ item.description }}</p>
+            <p>{{ item.description | markdownify }}</p>
           {% endif %}
         </div>
       {% endfor %}
@@ -68,7 +68,7 @@ layout: default
             <p class="meta">By {{ item.author }}</p>
           {% endif %}
           {% if item.description %}
-            <p>{{ item.description }}</p>
+            <p>{{ item.description | markdownify }}</p>
           {% endif %}
         </div>
       {% endfor %}
@@ -89,7 +89,7 @@ layout: default
             <p class="meta">{{ item.reference }}</p>
           {% endif %}
           {% if item.description %}
-            <p>{{ item.description }}</p>
+            <p>{{ item.description | markdownify }}</p>
           {% endif %}
         </div>
       {% endfor %}
