@@ -154,3 +154,24 @@ collections:
         fields:
           - { label: "Page Heading", name: "heading", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+
+  # ==========================================
+  # TRUTH (NEW)
+  # ==========================================
+  - name: truth
+    label: Truth
+    files:
+      - file: _data/truth.yml
+        label: Truth Page
+        name: truth
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+          - { label: "Banner Image", name: "image", widget: "image", required: false }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+          - name: dropdowns
+            label: "Dropdown Sections"
+            widget: "list"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Content", name: "content", widget: "markdown" }
