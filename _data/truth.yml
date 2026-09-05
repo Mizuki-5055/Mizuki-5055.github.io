@@ -1,0 +1,14 @@
+title: "The Truth"
+subtitle: "A deeper look into the foundations."
+image: ""
+body: |
+  This is the body of the Truth page. Markdown is supported here.
+
+  You can write paragraphs, **bold text**, *italic text*, and more.
+dropdowns:
+  - heading: "Section One"
+    content: |
+      Content for the first dropdown section. Supports **Markdown**.
+  - heading: "Section Two"
+    content: |
+      Content for the second dropdown section. Supports *Markdown*.
