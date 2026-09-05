@@ -875,3 +875,186 @@ footer {
     font-size: 0.95rem;
   }
 }
+
+/* ========================================
+   ABOUT PAGE – TRUTH BUTTON
+   ======================================== */
+.about-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.about-truth-btn {
+  display: inline-block;
+  padding: 0.8rem 2.8rem;
+  border: 1px solid #555555;
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.about-truth-btn:hover {
+  background: #ffffff;
+  color: #0a0a0a;
+  border-color: #ffffff;
+}
+
+/* ========================================
+   TRUTH PAGE
+   ======================================== */
+.truth-page {
+  max-width: 720px;
+  padding: 1rem 0 2rem 0;
+}
+
+.truth-banner {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #2a2a2a;
+}
+
+.truth-body {
+  color: #d0d0d0;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.truth-body h1,
+.truth-body h2,
+.truth-body h3 {
+  color: #ffffff;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.truth-body p {
+  margin-bottom: 1.2rem;
+}
+
+.truth-body a {
+  color: #aaaaaa;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s ease;
+}
+
+.truth-body a:hover {
+  color: #ffffff;
+}
+
+.truth-body ul,
+.truth-body ol {
+  margin-bottom: 1.2rem;
+  padding-left: 1.5rem;
+}
+
+.truth-body blockquote {
+  border-left: 3px solid #444444;
+  padding-left: 1.5rem;
+  color: #bbbbbb;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+/* Dropdowns */
+.truth-dropdowns {
+  margin-top: 2rem;
+}
+
+.truth-details {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.truth-details:hover {
+  border-color: #444444;
+}
+
+.truth-details summary {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.truth-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.truth-details summary::after {
+  content: "▸";
+  color: #666666;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.truth-details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.details-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: #cccccc;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.details-content p {
+  margin-bottom: 0.8rem;
+}
+
+.details-content p:last-child {
+  margin-bottom: 0;
+}
+
+.details-content a {
+  color: #aaaaaa;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.details-content a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .truth-page {
+    padding: 0 0 1rem 0;
+  }
+  .truth-body {
+    font-size: 0.95rem;
+  }
+  .truth-banner {
+    max-height: 200px;
+  }
+  .truth-details summary {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .details-content {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+  }
+}
