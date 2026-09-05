@@ -21,7 +21,7 @@ layout: default
           <div class="overlay">
             <h3>{{ item.title }}</h3>
             {% if item.description and item.description != '' %}
-              <p>{{ item.description }}</p>
+              <p>{{ item.description | markdownify }}</p>
             {% endif %}
           </div>
         </div>
