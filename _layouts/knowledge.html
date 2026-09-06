@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+{% assign knowledge = site.data.knowledge %}
+
+<section class="knowledge-page">
+  <!-- Title -->
+  {% if knowledge.title %}
+    <h2 class="page-heading">{{ knowledge.title }}</h2>
+  {% endif %}
+
+  <!-- Subtitle -->
+  {% if knowledge.subtitle %}
+    <p class="page-intro">{{ knowledge.subtitle }}</p>
+  {% endif %}
+
+  <!-- Dropdowns -->
+  {% if knowledge.dropdowns and knowledge.dropdowns.size > 0 %}
+    <div class="knowledge-dropdowns">
+      {% for dropdown in knowledge.dropdowns %}
+        <details class="knowledge-details">
+          <summary>
+            <span class="summary-heading">{{ dropdown.heading }}</span>
+            {% if dropdown.subtitle %}
+              <span class="summary-subtitle">{{ dropdown.subtitle }}</span>
+            {% endif %}
+          </summary>
+          <div class="details-content">
+            {{ dropdown.body | markdownify }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
