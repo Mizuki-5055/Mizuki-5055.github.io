@@ -1058,3 +1058,112 @@ footer {
     padding: 0 1.2rem 1.2rem 1.2rem;
   }
 }
+
+/* ========================================
+   KNOWLEDGE PAGE
+   ======================================== */
+.knowledge-page {
+  max-width: 720px;
+  padding: 1rem 0 2rem 0;
+}
+
+.knowledge-dropdowns {
+  margin-top: 2rem;
+}
+
+.knowledge-details {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.knowledge-details:hover {
+  border-color: #444444;
+}
+
+.knowledge-details summary {
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.knowledge-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.knowledge-details summary::after {
+  content: "▸";
+  color: #666666;
+  font-size: 1.4rem;
+  align-self: flex-end;
+  transition: transform 0.3s ease;
+  margin-top: -0.5rem;
+}
+
+.knowledge-details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.summary-heading {
+  font-weight: 300;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+}
+
+.summary-subtitle {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  letter-spacing: 0.03em;
+}
+
+.knowledge-details .details-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: #cccccc;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.knowledge-details .details-content p {
+  margin-bottom: 0.8rem;
+}
+
+.knowledge-details .details-content p:last-child {
+  margin-bottom: 0;
+}
+
+.knowledge-details .details-content a {
+  color: #aaaaaa;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.knowledge-details .details-content a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .knowledge-page {
+    padding: 0 0 1rem 0;
+  }
+  .knowledge-details summary {
+    padding: 1rem 1.2rem;
+  }
+  .summary-heading {
+    font-size: 1rem;
+  }
+  .summary-subtitle {
+    font-size: 0.8rem;
+  }
+  .knowledge-details .details-content {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
