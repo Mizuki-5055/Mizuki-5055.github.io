@@ -156,7 +156,7 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
 
   # ==========================================
-  # TRUTH (NEW)
+  # TRUTH
   # ==========================================
   - name: truth
     label: Truth
@@ -175,3 +175,23 @@ collections:
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Content", name: "content", widget: "markdown" }
+
+  # ==========================================
+  # KNOWLEDGE (NEW)
+  # ==========================================
+  - name: knowledge
+    label: Knowledge
+    files:
+      - file: _data/knowledge.yml
+        label: Knowledge Page
+        name: knowledge
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+          - name: dropdowns
+            label: "Dropdown Sections"
+            widget: "list"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+              - { label: "Body", name: "body", widget: "markdown" }
