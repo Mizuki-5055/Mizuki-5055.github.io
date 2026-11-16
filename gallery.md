@@ -1,5 +1,5 @@
 ---
 layout: gallery
-title: Helelism · Gallery
-permalink: /gallery/
+title: Maps · Helelism
+permalink: /maps/
 ---

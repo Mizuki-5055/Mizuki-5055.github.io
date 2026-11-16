@@ -1,6 +1,6 @@
 ---
 layout: page-list
-title: Scripture · Helelism
+title: Characters · Helelism
 data_file: scripture
-permalink: /scripture/
+permalink: /characters/
 ---

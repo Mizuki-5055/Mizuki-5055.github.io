@@ -1,5 +1,5 @@
 ---
 layout: truth
-title: Truth · Helelism
-permalink: /truth/
+title: Helvarian Myths · Helelism
+permalink: /helvarian-myths/
 ---

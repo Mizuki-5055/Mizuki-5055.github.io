@@ -1,6 +1,6 @@
 ---
 layout: page-list
-title: Literature · Helelism
+title: Extra Lore · Helelism
 data_file: literature
-permalink: /literature/
+permalink: /extra-lore/
 ---

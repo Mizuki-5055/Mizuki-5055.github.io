@@ -1,5 +1,5 @@
 ---
 layout: knowledge
-title: Knowledge · Helelism
-permalink: /knowledge/
+title: Author · Helelism
+permalink: /author/
 ---

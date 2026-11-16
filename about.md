@@ -1,5 +1,5 @@
 ---
 layout: about
-title: About · Helelism
-permalink: /about/
+title: About Helvar · Helelism
+permalink: /about-helvar/
 ---

@@ -1,6 +1,6 @@
 ---
 layout: page-list
-title: Hymns · Helelism
+title: Book Series · Helelism
 data_file: hymns
-permalink: /hymns/
+permalink: /book-series/
 ---
