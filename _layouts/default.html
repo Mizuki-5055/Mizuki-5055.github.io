@@ -5,31 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-  <link rel="icon" href="{{ '/images/uploads/LOGOHLL.png' | relative_url }}" type="image/png" />
 </head>
 <body>
 
-  <!-- ============================================= -->
-  <!-- BACKGROUND IMAGE (CMS Editable)              -->
-  <!-- ============================================= -->
   {% assign bg_image = site.data.settings.background_image %}
   {% if bg_image and bg_image != '' %}
     <div class="bg-layer" style="background-image: url('{{ bg_image | relative_url }}');"></div>
   {% endif %}
   <div class="overlay-layer"></div>
 
-  <!-- ============================================= -->
-  <!-- SITE WRAPPER                                 -->
-  <!-- ============================================= -->
   <div class="site-wrapper">
-
-    <!-- TOP NAVIGATION -->
     <header class="site-header">
       <div class="header-inner">
         <div class="site-title-group">
-          <a href="{{ '/' | relative_url }}" class="logo-link">
-            <img src="{{ '/images/uploads/LOGOHLL.png' | relative_url }}" alt="Helelism Logo" class="site-logo" />
-          </a>
           <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         </div>
         <nav class="top-nav">
@@ -40,14 +28,11 @@
       </div>
     </header>
 
-    <!-- MAIN LAYOUT: SIDEBAR + CONTENT -->
     <div class="site-container">
-
-      <!-- Sidebar -->
       <aside class="sidebar">
         <div class="sidebar-block">
-          <h3>Helelism</h3>
-          <p class="sidebar-bio">{{ site.data.settings.sidebar_bio | default: "Exploring light, shadow, and the spaces between." }}</p>
+          <h3>{{ site.title }}</h3>
+          <p class="sidebar-bio">{{ site.data.settings.sidebar_bio | default: "Explore the world of Helvar." }}</p>
           <hr />
           <nav class="sidebar-nav">
             {% for item in site.data.navigation.sidebar_nav %}
@@ -63,22 +48,16 @@
         </div>
       </aside>
 
-      <!-- Main Content -->
       <main>
         {{ content }}
       </main>
-
     </div>
 
-    <!-- FOOTER -->
     <footer>
       <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
     </footer>
+  </div>
 
-  </div> <!-- /site-wrapper -->
-
-  <!-- LIGHTBOX JAVASCRIPT -->
   <script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
-
 </body>
 </html>
