@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{% assign page_data = site.data[page.data_file] %}
+
+{% if page_data.heading %}
+  <h2 class="page-heading">{{ page_data.heading }}</h2>
+{% endif %}
+
+{% if page_data.intro %}
+  <p class="page-intro">{{ page_data.intro }}</p>
+{% endif %}
+
+<section class="book-series-list">
+  {% if page_data.series and page_data.series.size > 0 %}
+    {% for series in page_data.series %}
+      <article class="book-series-entry">
+        <h3>{{ series.title }}</h3>
+        {% if series.description %}
+          <div class="book-series-description">{{ series.description | markdownify }}</div>
+        {% endif %}
+
+        {% if series.books and series.books.size > 0 %}
+          <div class="book-series-books">
+            {% for book in series.books %}
+              <section class="book-series-book">
+                <h4>{{ book.title }}</h4>
+                {% if book.author %}
+                  <p class="meta">By {{ book.author }}</p>
+                {% endif %}
+                {% if book.bodies and book.bodies.size > 0 %}
+                  <div class="book-series-bodies">
+                    {% for body in book.bodies %}
+                      <div class="book-series-body">
+                        {% if body.heading %}<h5>{{ body.heading }}</h5>{% endif %}
+                        {% if body.body %}{{ body.body | markdownify }}{% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </section>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </article>
+    {% endfor %}
+  {% else %}
+    <p class="empty-message">No series yet. Add some via the CMS.</p>
+  {% endif %}
+</section>
+
+<style>
+  .book-series-list { display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem; }
+  .book-series-entry { padding: 1.5rem 2rem; background: rgba(255,255,255,.03); border-left: 2px solid #555; border-radius: 4px; }
+  .book-series-entry > h3 { color: #fff; font-weight: 300; font-size: 1.6rem; letter-spacing: .05em; margin-bottom: 1rem; }
+  .book-series-book { padding: 1.25rem 0; border-top: 1px solid #333; }
+  .book-series-book h4 { color: #eee; font-size: 1.2rem; font-weight: 400; }
+  .book-series-book h5 { color: #eee; font-size: 1rem; font-weight: 400; margin: 1rem 0 .4rem; }
+  .book-series-book .meta { color: #aaa; font-size: .85rem; margin: .25rem 0 .75rem; }
+  .book-series-body { color: #ccc; font-weight: 300; font-size: .95rem; line-height: 1.8; }
+  .book-series-body p { margin: 0 0 1rem; }
+  @media (max-width: 768px) { .book-series-entry { padding: 1rem 1.25rem; } }
+</style>

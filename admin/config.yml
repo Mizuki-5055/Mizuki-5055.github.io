@@ -1,22 +1,3 @@
-backend:
-  name: github
-  repo: Mizuki-5055/Mizuki-5055.github.io
-  branch: main
-
-media_folder: images/uploads
-public_folder: /images/uploads
-
-collections:
-  - name: homepage
-    label: Homepage
-    files:
-      - file: _data/homepage.yml
-        label: Homepage Hero Text
-        name: hero
-        fields:
-          - { label: "Main Title", name: "hero_title", widget: "string" }
-          - { label: "Welcome Text", name: "hero_tagline", widget: "text" }
-
   - name: book-series
     label: Book Series
     files:
@@ -26,142 +7,21 @@ collections:
         fields:
           - { label: "Page Heading", name: "heading", widget: "string" }
           - { label: "Introduction", name: "intro", widget: "text" }
-          - name: items
-            label: "Books or Series Entries"
+          - name: series
+            label: "Series"
             widget: "list"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Author or Credit", name: "author", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "markdown", required: false }
-
-  - name: extra-lore
-    label: Extra Lore
-    files:
-      - file: _data/literature.yml
-        label: Extra Lore Content
-        name: extra_lore
-        fields:
-          - { label: "Page Heading", name: "heading", widget: "string" }
-          - { label: "Introduction", name: "intro", widget: "text" }
-          - name: items
-            label: "Lore Entries"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Author or Credit", name: "author", widget: "string", required: false }
-              - { label: "Lore Text", name: "description", widget: "markdown", required: false }
-
-  - name: about-helvar
-    label: About Helvar
-    files:
-      - file: _data/about.yml
-        label: About Helvar Page
-        name: about_helvar
-        fields:
-          - { label: "Page Heading", name: "heading", widget: "string" }
-          - { label: "About Helvar Text", name: "body", widget: "markdown" }
-
-  - name: maps
-    label: Maps
-    files:
-      - file: _data/test.yml
-        label: Maps and Images
-        name: maps
-        fields:
-          - { label: "Page Heading", name: "heading", widget: "string", required: false }
-          - { label: "Introduction", name: "intro", widget: "text", required: false }
-          - name: items
-            label: "Maps and Images"
-            widget: "list"
-            fields:
-              - { label: "Map Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "markdown", required: false }
-              - { label: "Map Image", name: "image", widget: "image" }
-
-  - name: characters
-    label: Characters
-    files:
-      - file: _data/scripture.yml
-        label: Character Profiles
-        name: characters
-        fields:
-          - { label: "Page Heading", name: "heading", widget: "string" }
-          - { label: "Introduction", name: "intro", widget: "text" }
-          - name: items
-            label: "Characters"
-            widget: "list"
-            fields:
-              - { label: "Character Name", name: "title", widget: "string" }
-              - { label: "Additional Details", name: "reference", widget: "string", required: false }
-              - { label: "Character Description", name: "description", widget: "markdown", required: false }
-
-  - name: author
-    label: Author
-    files:
-      - file: _data/knowledge.yml
-        label: Author Page Content
-        name: author_page
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Introduction", name: "subtitle", widget: "text", required: false }
-          - name: dropdowns
-            label: "Author Sections"
-            widget: "list"
-            fields:
-              - { label: "Section Heading", name: "heading", widget: "string" }
-              - { label: "Short Subtitle", name: "subtitle", widget: "text", required: false }
-              - { label: "Section Text", name: "body", widget: "markdown" }
-
-  - name: helvarian-myths
-    label: Helvarian Myths
-    files:
-      - file: _data/truth.yml
-        label: Helvarian Myths Content
-        name: helvarian_myths
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Introduction", name: "subtitle", widget: "text", required: false }
-          - { label: "Banner Image", name: "image", widget: "image", required: false }
-          - { label: "Main Text", name: "body", widget: "markdown", required: false }
-          - name: dropdowns
-            label: "Myths and Stories"
-            widget: "list"
-            fields:
-              - { label: "Story Heading", name: "heading", widget: "string" }
-              - { label: "Story Text", name: "content", widget: "markdown" }
-
-  - name: navigation
-    label: Site Navigation
-    files:
-      - file: _data/navigation.yml
-        label: Menu Links
-        name: menus
-        fields:
-          - label: "Top Menu"
-            name: "top_nav"
-            widget: "list"
-            fields:
-              - { label: "Link Name", name: "label", widget: "string" }
-              - { label: "Page URL", name: "url", widget: "string" }
-          - label: "Sidebar Menu"
-            name: "sidebar_nav"
-            widget: "list"
-            fields:
-              - { label: "Link Name", name: "label", widget: "string" }
-              - { label: "Page URL", name: "url", widget: "string" }
-          - label: "Social Links"
-            name: "social_links"
-            widget: "list"
-            fields:
-              - { label: "Link Name", name: "label", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string" }
-
-  - name: settings
-    label: Site Appearance
-    files:
-      - file: _data/settings.yml
-        label: Background and Sidebar Text
-        name: settings
-        fields:
-          - { label: "Background Image", name: "background_image", widget: "image", required: false }
-          - { label: "Sidebar Introduction", name: "sidebar_bio", widget: "text", required: false }
+              - { label: "Series Title", name: "title", widget: "string" }
+              - { label: "Series Description", name: "description", widget: "markdown", required: false }
+              - name: books
+                label: "Books"
+                widget: "list"
+                fields:
+                  - { label: "Book Title", name: "title", widget: "string" }
+                  - { label: "Author or Credit", name: "author", widget: "string", required: false }
+                  - name: bodies
+                    label: "Bodies / Paragraphs"
+                    widget: "list"
+                    fields:
+                      - { label: "Section Heading", name: "heading", widget: "string", required: false }
+                      - { label: "Paragraph or Body Text", name: "body", widget: "markdown" }
