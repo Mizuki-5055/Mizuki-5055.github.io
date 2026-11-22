@@ -45,6 +45,45 @@ collections:
                       - { label: "Section Heading", name: "heading", widget: "string", required: false }
                       - { label: "Body Text", name: "body", widget: "markdown" }
 
+  - name: helvarian-calendar
+    label: "Calendar Entries (Helvarian)"
+    files:
+      - file: _data/calendar.yml
+        label: "Helvarian Calendar Dates and Entries"
+        name: calendar_content
+        fields:
+          - { label: "Calendar Heading", name: "heading", widget: "string", required: false }
+          - { label: "Introduction", name: "intro", widget: "text", required: false }
+          - name: dates
+            label: "Dated Entries"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "number", value_type: "int", min: 1 }
+              - label: "Month"
+                name: month
+                widget: select
+                options:
+                  - REGNIS
+                  - MEMENTIS
+                  - LUCIDIS
+                  - GELIDIS
+                  - VARMER
+                  - DRACCER
+                  - HELARI
+                  - NUBILLIS
+                  - FLORRER
+                  - VOKSER
+                  - ABRAXI
+                  - SOLARI
+              - { label: "Day of Month", name: "day", widget: "number", value_type: "int", min: 1, max: 31 }
+              - name: entries
+                label: "Entries for This Date"
+                widget: "list"
+                fields:
+                  - { label: "Entry Title", name: "title", widget: "string" }
+                  - { label: "Calendar Preview", name: "preview", widget: "markdown", required: false }
+                  - { label: "Full Entry Content", name: "content", widget: "markdown", required: false }
+
   - name: extra-lore
     label: Extra Lore
     files:
