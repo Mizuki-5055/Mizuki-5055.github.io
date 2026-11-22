@@ -20,7 +20,7 @@ holidays:
   - title: Slådag
     month: DRACCER
     day: 15
-    preview: A day to remember the retreat of the dragons; scarcely observed.
+    preview: "A day to remember the retreat of the dragons; scarcely observed."
     content: Slådag commemorates the retreat of the dragons. The holiday is scarcely observed.
   - title: Avlader
     month: VOKSER
@@ -37,5 +37,5 @@ holidays:
     day: 23
     end_month: SOLARI
     end_day: 29
-    preview: The last week of Solari: remembering the year and preparing for the next.
-    content: Solstice is the final week of the year, a time for remembering the year that has passed and preparing for the next. It runs from Solari 23rd through Solari 29th.
+    preview: "The last week of Solari: remembering the year and preparing for the next."
+    content: "Solstice is the final week of the year, a time for remembering the year that has passed and preparing for the next. It runs from Solari 23rd through Solari 29th."
