@@ -1,43 +1,37 @@
 top_nav:
-  - label: "Home"
-    url: "/"
-  - label: "Book Series"
-    url: "/book-series/"
-  - label: "Extra Lore"
-    url: "/extra-lore/"
-  - label: "About Helvar"
-    url: "/about-helvar/"
-  - label: "Maps"
-    url: "/maps/"
-  - label: "Characters"
-    url: "/characters/"
-  - label: "Author"
-    url: "/author/"
-  - label: "Helvarian Myths"
-    url: "/helvarian-myths/"
-
+  - label: Home
+    url: /
+  - label: Book Series
+    url: /book-series/
+  - label: Extra Lore
+    url: /extra-lore/
+  - label: About Helvar
+    url: /about-helvar/
+  - label: Maps
+    url: /maps/
+  - label: Characters
+    url: /characters/
+  - label: Author
+    url: /author/
+  - label: Helvarian Myths
+    url: /helvarian-myths/
 sidebar_nav:
-  - label: "Home"
-    url: "/"
-  - label: "Book Series"
-    url: "/book-series/"
-  - label: "Extra Lore"
-    url: "/extra-lore/"
-  - label: "About Helvar"
-    url: "/about-helvar/"
-  - label: "Maps"
-    url: "/maps/"
-  - label: "Characters"
-    url: "/characters/"
-  - label: "Author"
-    url: "/author/"
-  - label: "Helvarian Myths"
-    url: "/helvarian-myths/"
-
+  - label: Home
+    url: /
+  - label: Book Series
+    url: /book-series/
+  - label: Extra Lore
+    url: /extra-lore/
+  - label: About Helvar
+    url: /about-helvar/
+  - label: Maps
+    url: /maps/
+  - label: Characters
+    url: /characters/
+  - label: Author
+    url: /author/
+  - label: Helvarian Myths
+    url: /helvarian-myths/
 social_links:
-  - label: "Instagram"
-    url: "https://instagram.com/"
-  - label: "Twitter"
-    url: "https://twitter.com/"
-  - label: "Email"
-    url: "mailto:your-email@example.com"
+  - label: Instagram
+    url: https://instagram.com/malhelel/
