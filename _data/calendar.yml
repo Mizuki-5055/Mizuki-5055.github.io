@@ -1,41 +1,63 @@
 heading: Helvarian Calendar
 intro: Browse the years, months, and days of Helvar. Select a date to view its chronicles; dates may hold more than one entry. Recurring holidays appear automatically each year.
-dates: []
+dates:
+  - year: 786
+    month: VARMER
+    day: 25
+    entries:
+      - title: Estelle's Birthday
+        preview: ''
+        content: ''
+      - title: Melody's Birthday
+        preview: ''
+        content: ''
 holidays:
   - title: Ny Skörd
     month: REGNIS
     day: 1
+    end_month: ''
+    end_day: null
     preview: The New Year festival.
     content: Ny Skörd is the New Year festival, welcoming the beginning of each year.
   - title: Erindringer
     month: MEMENTIS
     day: 31
-    preview: A day to remember the dead.
+    end_month: ''
+    end_day: null
+    preview: ''
     content: Erindringer is dedicated to remembering the dead.
   - title: Lunmara / Lunvara
     month: VARMER
     day: 25
-    preview: The night the fractured moon appears whole.
+    end_month: ''
+    end_day: null
+    preview: ''
     content: Lunmara, also known as Lunvara, marks the night the fractured moon appears whole.
   - title: Slådag
     month: DRACCER
     day: 15
-    preview: "A day to remember the retreat of the dragons; scarcely observed."
+    end_month: ''
+    end_day: null
+    preview: ''
     content: Slådag commemorates the retreat of the dragons. The holiday is scarcely observed.
   - title: Avlader
     month: VOKSER
     day: 13
-    preview: The coming-of-age day for those who have turned 17.
+    end_month: ''
+    end_day: null
+    preview: ''
     content: Avlader is the coming-of-age day for people who have turned 17.
   - title: Luciana
     month: FLORRER
     day: 20
-    preview: A celebration of the world's animals and flora.
+    end_month: ''
+    end_day: null
+    preview: ''
     content: Luciana celebrates the world's animals and flora.
   - title: Solstice
     month: SOLARI
     day: 23
     end_month: SOLARI
     end_day: 29
-    preview: "The last week of Solari: remembering the year and preparing for the next."
-    content: "Solstice is the final week of the year, a time for remembering the year that has passed and preparing for the next. It runs from Solari 23rd through Solari 29th."
+    preview: ''
+    content: Solstice is the final week of the year, a time for remembering the year that has passed and preparing for the next. It runs from Solari 23rd through Solari 29th.
