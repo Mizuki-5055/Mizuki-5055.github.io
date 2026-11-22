@@ -49,32 +49,20 @@ collections:
     label: "Calendar Entries (Helvarian)"
     files:
       - file: _data/calendar.yml
-        label: "Helvarian Calendar Dates and Entries"
+        label: "Helvarian Calendar, Dated Entries, and Recurring Holidays"
         name: calendar_content
         fields:
           - { label: "Calendar Heading", name: "heading", widget: "string", required: false }
           - { label: "Introduction", name: "intro", widget: "text", required: false }
           - name: dates
-            label: "Dated Entries"
+            label: "Dated Entries (one specific year)"
             widget: "list"
             fields:
               - { label: "Year", name: "year", widget: "number", value_type: "int", min: 1 }
               - label: "Month"
                 name: month
                 widget: select
-                options:
-                  - REGNIS
-                  - MEMENTIS
-                  - LUCIDIS
-                  - GELIDIS
-                  - VARMER
-                  - DRACCER
-                  - HELARI
-                  - NUBILLIS
-                  - FLORRER
-                  - VOKSER
-                  - ABRAXI
-                  - SOLARI
+                options: [REGNIS, MEMENTIS, LUCIDIS, GELIDIS, VARMER, DRACCER, HELARI, NUBILLIS, FLORRER, VOKSER, ABRAXI, SOLARI]
               - { label: "Day of Month", name: "day", widget: "number", value_type: "int", min: 1, max: 31 }
               - name: entries
                 label: "Entries for This Date"
@@ -83,6 +71,24 @@ collections:
                   - { label: "Entry Title", name: "title", widget: "string" }
                   - { label: "Calendar Preview", name: "preview", widget: "markdown", required: false }
                   - { label: "Full Entry Content", name: "content", widget: "markdown", required: false }
+          - name: holidays
+            label: "Recurring Holidays and Observances"
+            widget: "list"
+            fields:
+              - { label: "Holiday Name", name: "title", widget: "string" }
+              - label: "Start Month"
+                name: month
+                widget: select
+                options: [REGNIS, MEMENTIS, LUCIDIS, GELIDIS, VARMER, DRACCER, HELARI, NUBILLIS, FLORRER, VOKSER, ABRAXI, SOLARI]
+              - { label: "Start Day", name: "day", widget: "number", value_type: "int", min: 1, max: 31 }
+              - label: "End Month (for spans across days/year)"
+                name: end_month
+                widget: select
+                required: false
+                options: [REGNIS, MEMENTIS, LUCIDIS, GELIDIS, VARMER, DRACCER, HELARI, NUBILLIS, FLORRER, VOKSER, ABRAXI, SOLARI]
+              - { label: "End Day (leave blank for one day)", name: "end_day", widget: "number", value_type: "int", required: false, min: 1, max: 31 }
+              - { label: "Calendar Preview", name: "preview", widget: "markdown", required: false }
+              - { label: "Holiday Description", name: "content", widget: "markdown", required: false }
 
   - name: extra-lore
     label: Extra Lore

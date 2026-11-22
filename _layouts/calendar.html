@@ -33,7 +33,6 @@ layout: default
   </div>
 
   <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Days of the month"></div>
-
   <section id="calendar-selected-date" class="calendar-selected-date" aria-live="polite" aria-label="Selected date content">
     <p class="calendar-selection-prompt">Select a date to view its entries.</p>
   </section>
@@ -49,6 +48,19 @@ layout: default
           {% if entry.content %}<div class="calendar-source-content">{{ entry.content | markdownify }}</div>{% endif %}
         </article>
       {% endfor %}
+    </template>
+  {% endfor %}
+  {% for holiday in calendar.holidays %}
+    <template class="calendar-holiday-source"
+      data-month="{{ holiday.month | slugify }}"
+      data-day="{{ holiday.day }}"
+      data-end-month="{{ holiday.end_month | default: holiday.month | slugify }}"
+      data-end-day="{{ holiday.end_day | default: holiday.day }}">
+      <article class="calendar-source-entry calendar-holiday-entry">
+        <h4>{{ holiday.title | escape }}</h4>
+        {% if holiday.preview %}<div class="calendar-source-preview">{{ holiday.preview | markdownify }}</div>{% endif %}
+        {% if holiday.content %}<div class="calendar-source-content">{{ holiday.content | markdownify }}</div>{% endif %}
+      </article>
     </template>
   {% endfor %}
 </div>
@@ -71,15 +83,18 @@ layout: default
   .calendar-day, .calendar-empty { min-height: 6.2rem; }
   .calendar-day { display: flex; flex-direction: column; align-items: stretch; gap: .3rem; padding: .55rem; text-align: left; color: #eee; background: rgba(255,255,255,.035); border: 1px solid #333; border-radius: 4px; cursor: pointer; font: inherit; }
   .calendar-day:hover, .calendar-day.has-entries { border-color: #777; background: rgba(255,255,255,.075); }
+  .calendar-day.has-holiday { border-color: #8c7449; }
   .calendar-day.is-selected { border-color: #bbb; box-shadow: inset 0 0 0 1px #bbb; }
   .calendar-day-number { font-size: .95rem; }
   .calendar-day-preview { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; color: #aaa; font-size: .75rem; line-height: 1.35; overflow-wrap: anywhere; }
   .calendar-day-count { color: #ddd; font-size: .7rem; }
+  .calendar-holiday-label { color: #d7bc83; font-size: .7rem; }
   .calendar-empty { border: 1px solid transparent; }
   .calendar-selected-date { margin-top: 1.25rem; padding: 1rem 1.2rem; background: rgba(255,255,255,.035); border-left: 2px solid #666; border-radius: 4px; }
   .calendar-selected-date h3 { margin-top: 0; color: #fff; }
   .calendar-selected-date h4 { color: #eee; margin-bottom: .5rem; }
   .calendar-selected-date .calendar-full-entry { padding: .5rem 0 1rem; border-top: 1px solid #333; color: #ccc; line-height: 1.75; }
+  .calendar-selected-date .calendar-holiday-entry h4 { color: #d7bc83; }
   .calendar-selected-date .calendar-full-entry p:last-child { margin-bottom: 0; }
   .calendar-no-entries, .calendar-selection-prompt { color: #aaa; }
   @media (max-width: 700px) {

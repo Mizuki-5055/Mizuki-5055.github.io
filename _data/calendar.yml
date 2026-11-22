@@ -1,3 +1,41 @@
 heading: Helvarian Calendar
-intro: Browse the years, months, and days of Helvar. Select a date to view its chronicles; dates may hold more than one entry.
+intro: Browse the years, months, and days of Helvar. Select a date to view its chronicles; dates may hold more than one entry. Recurring holidays appear automatically each year.
 dates: []
+holidays:
+  - title: Nyskørd
+    month: REGNIS
+    day: 1
+    preview: The first day of the year.
+    content: Nyskørd marks the beginning of each new year.
+  - title: Erindringer
+    month: MEMENTIS
+    day: 31
+    preview: A day for remembrance.
+    content: Erindringer is observed on the final day of Mementis.
+  - title: Lunmara / Lunvara
+    month: VARMER
+    day: 25
+    preview: The festival of Lunmara, also known as Lunvara.
+    content: Lunmara, also known as Lunvara, is celebrated on the 25th of Varmer.
+  - title: Slådag
+    month: DRACCER
+    day: 15
+    preview: Slådag.
+    content: Slådag is observed on the 15th of Draccer.
+  - title: Luciana
+    month: FLORRER
+    day: 20
+    preview: Luciana.
+    content: Luciana is celebrated on the 20th of Florrer.
+  - title: Avlader
+    month: VOKSER
+    day: 13
+    preview: Avlader.
+    content: Avlader is observed on the 13th of Vokser.
+  - title: Solstice Week
+    month: SOLARI
+    day: 23
+    end_month: REGNIS
+    end_day: 1
+    preview: The final week of Solari, continuing through the first day of the new year.
+    content: Solstice Week generally spans the 23rd through the 29th of Solari and continues through Regnis 1st, the first day of the next year. It overlaps with Nyskørd on Regnis 1st.
