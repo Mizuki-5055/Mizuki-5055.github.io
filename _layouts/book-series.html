@@ -30,12 +30,16 @@ layout: default
                   <p class="meta">By {{ book.author }}</p>
                 {% endif %}
                 {% if book.bodies and book.bodies.size > 0 %}
-                  <div class="book-series-bodies">
-                    {% for body in book.bodies %}
-                      <div class="book-series-body">
-                        {% if body.heading %}<h5>{{ body.heading }}</h5>{% endif %}
-                        {% if body.body %}{{ body.body | markdownify }}{% endif %}
-                      </div>
+                  <div class="book-series-chapters">
+                    {% for chapter in book.bodies %}
+                      <details class="book-series-chapter">
+                        <summary>
+                          <span class="chapter-title">{{ chapter.heading | escape }}</span>
+                        </summary>
+                        <div class="book-series-chapter-content">
+                          {% if chapter.body %}{{ chapter.body | markdownify }}{% endif %}
+                        </div>
+                      </details>
                     {% endfor %}
                   </div>
                 {% endif %}
@@ -56,9 +60,16 @@ layout: default
   .book-series-entry > h3 { color: #fff; font-weight: 300; font-size: 1.6rem; letter-spacing: .05em; margin-bottom: 1rem; }
   .book-series-book { padding: 1.25rem 0; border-top: 1px solid #333; }
   .book-series-book h4 { color: #eee; font-size: 1.2rem; font-weight: 400; }
-  .book-series-book h5 { color: #eee; font-size: 1rem; font-weight: 400; margin: 1rem 0 .4rem; }
   .book-series-book .meta { color: #aaa; font-size: .85rem; margin: .25rem 0 .75rem; }
-  .book-series-body { color: #ccc; font-weight: 300; font-size: .95rem; line-height: 1.8; }
-  .book-series-body p { margin: 0 0 1rem; }
-  @media (max-width: 768px) { .book-series-entry { padding: 1rem 1.25rem; } }
+  .book-series-chapters { margin-top: 1rem; }
+  .book-series-chapter { border: 1px solid #333; border-radius: 4px; margin-bottom: .65rem; background: rgba(0,0,0,.12); }
+  .book-series-chapter summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #eee; cursor: pointer; padding: .9rem 1rem; font-size: 1rem; font-weight: 400; list-style: none; }
+  .book-series-chapter summary::-webkit-details-marker { display: none; }
+  .book-series-chapter summary::after { content: "+"; flex: 0 0 auto; color: #aaa; font-size: 1.25rem; line-height: 1; }
+  .book-series-chapter[open] summary::after { content: "−"; }
+  .book-series-chapter[open] summary { border-bottom: 1px solid #333; }
+  .book-series-chapter-content { color: #ccc; font-weight: 300; font-size: .95rem; line-height: 1.8; padding: 1.25rem 1rem .25rem; }
+  .book-series-chapter-content p { margin: 0 0 1rem; }
+  .book-series-chapter-content h2 { font-size: 1.15rem; color: #eee; }
+  @media (max-width: 768px) { .book-series-entry { padding: 1rem 1.25rem; } .book-series-chapter summary { padding: .85rem; } .book-series-chapter-content { padding: 1rem .85rem .25rem; } }
 </style>

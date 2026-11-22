@@ -43,13 +43,30 @@
                 { label: "Page Heading", name: "heading", widget: "string" },
                 { label: "Introduction", name: "intro", widget: "text" },
                 {
-                  name: "items",
-                  label: "Books or Series Entries",
+                  name: "series",
+                  label: "Series",
                   widget: "list",
                   fields: [
-                    { label: "Title", name: "title", widget: "string" },
-                    { label: "Author or Credit", name: "author", widget: "string", required: false },
-                    { label: "Description", name: "description", widget: "markdown", required: false }
+                    { label: "Series Title", name: "title", widget: "string" },
+                    { label: "Series Description", name: "description", widget: "markdown", required: false },
+                    {
+                      name: "books",
+                      label: "Books",
+                      widget: "list",
+                      fields: [
+                        { label: "Book Title", name: "title", widget: "string" },
+                        { label: "Author or Credit", name: "author", widget: "string", required: false },
+                        {
+                          name: "bodies",
+                          label: "Chapters",
+                          widget: "list",
+                          fields: [
+                            { label: "Chapter Heading", name: "heading", widget: "string" },
+                            { label: "Chapter Text", name: "body", widget: "markdown" }
+                          ]
+                        }
+                      ]
+                    }
                   ]
                 }
               ]
