@@ -3,6 +3,8 @@ top_nav:
     url: /
   - label: Book Series
     url: /book-series/
+  - label: Calendar
+    url: /calendar/
   - label: Extra Lore
     url: /extra-lore/
   - label: About Helvar
@@ -20,6 +22,8 @@ sidebar_nav:
     url: /
   - label: Book Series
     url: /book-series/
+  - label: Calendar
+    url: /calendar/
   - label: Extra Lore
     url: /extra-lore/
   - label: About Helvar

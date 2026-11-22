@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+{% assign calendar = site.data[page.data_file] %}
+
+<section class="universe-calendar" aria-labelledby="calendar-heading">
+  <h2 id="calendar-heading" class="page-heading">{{ calendar.heading | default: "Helvarian Calendar" }}</h2>
+  {% if calendar.intro %}<p class="page-intro">{{ calendar.intro }}</p>{% endif %}
+
+  <div class="calendar-controls" aria-label="Calendar navigation">
+    <div class="calendar-year-control">
+      <label for="calendar-year">Year</label>
+      <input id="calendar-year" type="number" min="1" step="1" value="807" inputmode="numeric">
+      <button id="calendar-go-year" type="button">Go to year</button>
+    </div>
+    <div class="calendar-month-control">
+      <label for="calendar-month">Month</label>
+      <button id="calendar-prev-month" type="button" aria-label="Previous month">‹</button>
+      <select id="calendar-month" aria-label="Select month"></select>
+      <button id="calendar-next-month" type="button" aria-label="Next month">›</button>
+    </div>
+    <form id="calendar-date-jump" class="calendar-date-control">
+      <label for="calendar-day">Jump to date</label>
+      <input id="calendar-day" type="number" min="1" max="31" step="1" value="1" aria-label="Day of month">
+      <button type="submit">Go to date</button>
+    </form>
+  </div>
+
+  <div class="calendar-month-heading">
+    <h3 id="calendar-month-title" aria-live="polite"></h3>
+    <p>Year <span id="calendar-year-label"></span></p>
+  </div>
+
+  <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Days of the month"></div>
+
+  <section id="calendar-selected-date" class="calendar-selected-date" aria-live="polite" aria-label="Selected date content">
+    <p class="calendar-selection-prompt">Select a date to view its entries.</p>
+  </section>
+</section>
+
+<div class="calendar-entry-sources" hidden aria-hidden="true">
+  {% for date in calendar.dates %}
+    <template class="calendar-date-source" data-year="{{ date.year }}" data-month="{{ date.month | slugify }}" data-day="{{ date.day }}">
+      {% for entry in date.entries %}
+        <article class="calendar-source-entry">
+          <h4>{{ entry.title | escape }}</h4>
+          {% if entry.preview %}<div class="calendar-source-preview">{{ entry.preview | markdownify }}</div>{% endif %}
+          {% if entry.content %}<div class="calendar-source-content">{{ entry.content | markdownify }}</div>{% endif %}
+        </article>
+      {% endfor %}
+    </template>
+  {% endfor %}
+</div>
+
+<style>
+  .universe-calendar { max-width: 1000px; }
+  .calendar-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .85rem 1rem; margin: 1.5rem 0; padding: 1rem; background: rgba(255,255,255,.035); border: 1px solid #333; border-radius: 6px; }
+  .calendar-controls > div, .calendar-date-control { display: flex; align-items: center; gap: .45rem; }
+  .calendar-controls label { color: #ddd; font-size: .9rem; }
+  .calendar-controls input, .calendar-controls select, .calendar-controls button { min-height: 2.4rem; color: #eee; background: #171717; border: 1px solid #444; border-radius: 4px; padding: .35rem .65rem; font: inherit; }
+  .calendar-controls input { width: 6rem; }
+  .calendar-controls input:focus, .calendar-controls select:focus, .calendar-controls button:focus-visible, .calendar-day:focus-visible { outline: 2px solid #aaa; outline-offset: 2px; }
+  .calendar-controls button { cursor: pointer; }
+  .calendar-controls button:hover { background: #292929; }
+  .calendar-month-heading { display: flex; justify-content: space-between; align-items: baseline; margin: 1.25rem 0 .75rem; }
+  .calendar-month-heading h3 { margin: 0; color: #fff; font-size: 1.4rem; font-weight: 400; }
+  .calendar-month-heading p { margin: 0; color: #aaa; }
+  .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .4rem; }
+  .calendar-weekday { padding: .5rem .25rem; text-align: center; color: #aaa; font-size: .82rem; }
+  .calendar-day, .calendar-empty { min-height: 6.2rem; }
+  .calendar-day { display: flex; flex-direction: column; align-items: stretch; gap: .3rem; padding: .55rem; text-align: left; color: #eee; background: rgba(255,255,255,.035); border: 1px solid #333; border-radius: 4px; cursor: pointer; font: inherit; }
+  .calendar-day:hover, .calendar-day.has-entries { border-color: #777; background: rgba(255,255,255,.075); }
+  .calendar-day.is-selected { border-color: #bbb; box-shadow: inset 0 0 0 1px #bbb; }
+  .calendar-day-number { font-size: .95rem; }
+  .calendar-day-preview { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; color: #aaa; font-size: .75rem; line-height: 1.35; overflow-wrap: anywhere; }
+  .calendar-day-count { color: #ddd; font-size: .7rem; }
+  .calendar-empty { border: 1px solid transparent; }
+  .calendar-selected-date { margin-top: 1.25rem; padding: 1rem 1.2rem; background: rgba(255,255,255,.035); border-left: 2px solid #666; border-radius: 4px; }
+  .calendar-selected-date h3 { margin-top: 0; color: #fff; }
+  .calendar-selected-date h4 { color: #eee; margin-bottom: .5rem; }
+  .calendar-selected-date .calendar-full-entry { padding: .5rem 0 1rem; border-top: 1px solid #333; color: #ccc; line-height: 1.75; }
+  .calendar-selected-date .calendar-full-entry p:last-child { margin-bottom: 0; }
+  .calendar-no-entries, .calendar-selection-prompt { color: #aaa; }
+  @media (max-width: 700px) {
+    .calendar-controls { align-items: stretch; }
+    .calendar-controls > div, .calendar-date-control { flex-wrap: wrap; }
+    .calendar-grid { gap: .2rem; }
+    .calendar-weekday { font-size: .68rem; padding: .35rem 0; }
+    .calendar-day, .calendar-empty { min-height: 4.5rem; }
+    .calendar-day { padding: .35rem; }
+    .calendar-day-preview { -webkit-line-clamp: 2; font-size: .65rem; }
+  }
+  @media (max-width: 420px) {
+    .calendar-day, .calendar-empty { min-height: 3.2rem; }
+    .calendar-day-preview { display: none; }
+  }
+</style>
+
+<script src="{{ '/assets/js/calendar.js' | relative_url }}" defer></script>
