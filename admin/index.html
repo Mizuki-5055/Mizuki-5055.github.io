@@ -74,13 +74,13 @@
           ]
         },
         {
-          name: "calendar",
-          label: "Helvarian Calendar",
+          name: "helvarian-calendar",
+          label: "Calendar Entries (Helvarian)",
           files: [
             {
               file: "_data/calendar.yml",
-              label: "Calendar and Dated Entries",
-              name: "calendar",
+              label: "Helvarian Calendar Dates and Entries",
+              name: "calendar_content",
               fields: [
                 { label: "Calendar Heading", name: "heading", widget: "string", required: false },
                 { label: "Introduction", name: "intro", widget: "text", required: false },
@@ -88,7 +88,6 @@
                   name: "dates",
                   label: "Dated Entries",
                   widget: "list",
-                  summary: "{{fields.month}} {{fields.day}}, Year {{fields.year}}",
                   fields: [
                     { label: "Year", name: "year", widget: "number", value_type: "int", min: 1 },
                     {
