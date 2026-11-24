@@ -20,38 +20,21 @@
         <div class="site-title-group">
           <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         </div>
-        <nav class="top-nav">
+        <nav class="top-nav" aria-label="Main navigation">
           {% for item in site.data.navigation.top_nav %}
-            <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+            {% if item.external %}
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+            {% else %}
+              <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+            {% endif %}
           {% endfor %}
         </nav>
       </div>
     </header>
 
-    <div class="site-container">
-      <aside class="sidebar">
-        <div class="sidebar-block">
-          <h3>{{ site.title }}</h3>
-          <p class="sidebar-bio">{{ site.data.settings.sidebar_bio | default: "Explore the world of Helvar." }}</p>
-          <hr />
-          <nav class="sidebar-nav">
-            {% for item in site.data.navigation.sidebar_nav %}
-              <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
-            {% endfor %}
-          </nav>
-          <hr />
-          <div class="sidebar-social">
-            {% for item in site.data.navigation.social_links %}
-              <a href="{{ item.url }}">{{ item.label }}</a>
-            {% endfor %}
-          </div>
-        </div>
-      </aside>
-
-      <main>
-        {{ content }}
-      </main>
-    </div>
+    <main class="site-container">
+      {{ content }}
+    </main>
 
     <footer>
       <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>

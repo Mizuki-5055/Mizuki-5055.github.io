@@ -17,25 +17,6 @@ top_nav:
     url: /author/
   - label: Helvarian Myths
     url: /helvarian-myths/
-sidebar_nav:
-  - label: Home
-    url: /
-  - label: Book Series
-    url: /book-series/
-  - label: Calendar
-    url: /calendar/
-  - label: Extra Lore
-    url: /extra-lore/
-  - label: About Helvar
-    url: /about-helvar/
-  - label: Maps
-    url: /maps/
-  - label: Characters
-    url: /characters/
-  - label: Author
-    url: /author/
-  - label: Helvarian Myths
-    url: /helvarian-myths/
-social_links:
   - label: Instagram
     url: https://instagram.com/malhelel/
+    external: true
