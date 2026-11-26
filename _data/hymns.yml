@@ -2,9 +2,11 @@ heading: THOFS Universe | Book Series
 intro: A collection of all book series pertaining to the universe of The Hopes of Fallen Stars
 series:
   - title: The Hopes of Fallen Stars
+    cover: /images/uploads/thofss.png
     description: First series of the THOFS Universe.
     books:
       - title: An Alter for a Cradle
+        cover: /images/uploads/aafac.png
         author: Malhelel
         bodies:
           - heading: Chapter One | Born Under a Fractured Moon
